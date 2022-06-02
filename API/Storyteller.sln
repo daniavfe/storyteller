@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storyteller.Host", "src\Storyteller.Host\Storyteller.Host.csproj", "{8CC18326-828E-4570-9A28-F3A8B778FA17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storyteller.Api", "src\Storyteller.Api\Storyteller.Api.csproj", "{48AB684D-90BB-415C-8869-B1DB3704D0D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storyteller.Application", "src\Storyteller.Application\Storyteller.Application.csproj", "{30CB2FE8-69C6-48EE-8265-78710E0F801C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storyteller.Data", "src\Storyteller.Data\Storyteller.Data.csproj", "{F657BC45-310A-4475-B24D-DDC01799AD67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storyteller.Constants", "src\Storyteller.Constants\Storyteller.Constants.csproj", "{20F52181-D916-4544-AEA2-E107F43839D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storyteller.Domain", "src\Storyteller.Domain\Storyteller.Domain.csproj", "{6B407F00-6D0F-4686-ADF0-E9FCDE4D2121}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CC18326-828E-4570-9A28-F3A8B778FA17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC18326-828E-4570-9A28-F3A8B778FA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC18326-828E-4570-9A28-F3A8B778FA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC18326-828E-4570-9A28-F3A8B778FA17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48AB684D-90BB-415C-8869-B1DB3704D0D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48AB684D-90BB-415C-8869-B1DB3704D0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48AB684D-90BB-415C-8869-B1DB3704D0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48AB684D-90BB-415C-8869-B1DB3704D0D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30CB2FE8-69C6-48EE-8265-78710E0F801C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CB2FE8-69C6-48EE-8265-78710E0F801C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CB2FE8-69C6-48EE-8265-78710E0F801C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CB2FE8-69C6-48EE-8265-78710E0F801C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F657BC45-310A-4475-B24D-DDC01799AD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F657BC45-310A-4475-B24D-DDC01799AD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F657BC45-310A-4475-B24D-DDC01799AD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F657BC45-310A-4475-B24D-DDC01799AD67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F52181-D916-4544-AEA2-E107F43839D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F52181-D916-4544-AEA2-E107F43839D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F52181-D916-4544-AEA2-E107F43839D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F52181-D916-4544-AEA2-E107F43839D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B407F00-6D0F-4686-ADF0-E9FCDE4D2121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B407F00-6D0F-4686-ADF0-E9FCDE4D2121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B407F00-6D0F-4686-ADF0-E9FCDE4D2121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B407F00-6D0F-4686-ADF0-E9FCDE4D2121}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5328BF6-1FED-41A1-A8B9-A4D0D5EDB1EF}
+	EndGlobalSection
+EndGlobal
