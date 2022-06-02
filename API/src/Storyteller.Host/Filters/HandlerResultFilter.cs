@@ -9,17 +9,29 @@ namespace Storyteller.Host.Filters
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            var con = (HandlerResult)((ObjectResult)context.Result).Value;
+            var handlerResult = (HandlerResult)((ObjectResult)context.Result).Value;
+   
 
-            if (con.IsFailure)
+            if (handlerResult.IsFailure)
             {
-                context.Result = new BadRequestObjectResult(con.Error);
+                context.Result = new BadRequestObjectResult(handlerResult.Error);
+                return;
             }
+
+            if (handlerResult.Value != null)
+            {
+                context.Result = new OkObjectResult(handlerResult.Value);
+                return;
+            }
+
+            context.Result = new NoContentResult();
+            return;
+
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            
+
         }
 
     }

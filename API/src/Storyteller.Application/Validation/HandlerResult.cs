@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Storyteller.Application.Validation
+﻿namespace Storyteller.Application.Validation
 {
 
     public class HandlerResult
@@ -8,7 +6,7 @@ namespace Storyteller.Application.Validation
         public HandlerError Error { get; set; }
         public bool IsSuccess => Error == null;
         public bool IsFailure => Error != null;
-
+        public object Value { get; set; }
         public static HandlerResult Failure(string code, string message)
         {
             return new HandlerResult
@@ -20,23 +18,38 @@ namespace Storyteller.Application.Validation
                 }
             };
         }
+
+        public static HandlerResult Sucess(object value)
+        {
+            return new HandlerResult
+            {
+                Value = value
+            };
+        }
     }
 
     public class HandlerResult<T> : HandlerResult
     {
-        public T Value { get; set; }
-
-        public static HandlerResult Failure(string code, string message)
+        public static HandlerResult<T> Failure(string code, string message)
         {
-            return HandlerResult.Failure(code, message);
+            return (HandlerResult<T>)HandlerResult.Failure(code, message);
         }
 
         public static HandlerResult<T> Success(T value)
         {
+            var result = HandlerResult.Sucess(value);
             return new HandlerResult<T>
             {
-                Value = value,
+                Value = (T)result.Value
             };
+        }
+    }
+
+    public class HandlerResultEmpty : HandlerResult
+    {
+        public static HandlerResultEmpty Success()
+        {
+            return new HandlerResultEmpty();
         }
     }
 }

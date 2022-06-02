@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
+using MediatR.Pipeline;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Storyteller.Application.Auth.Commands.SignupUser;
@@ -13,7 +14,8 @@ namespace Storyteller.Api
         {
            return services.AddMediatR(typeof(SignupUserHandler).Assembly)
                 .AddValidatorsFromAssembly(typeof(SignupUserHandler).Assembly, ServiceLifetime.Scoped)
-                .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+                .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>))
+                .AddScoped(typeof(IRequestExceptionHandler<,,>), typeof(CustomRequestExceptionHandler<,,>));
         }
 
     }

@@ -18,12 +18,14 @@ namespace Storyteller.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<HandlerResult<string>> Signup()
+        public async Task<HandlerResultEmpty> Signup()
         {
-            return await _mediator.Send(new SignupUserRequest
+            var x =  await _mediator.Send(new SignupUserRequest
             {
-                Poc = ""
+                Poc="adsfsdf"
             });
+
+            return x;
         }
     }
 }
