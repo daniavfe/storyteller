@@ -1,11 +1,8 @@
-
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using Storyteller.Api;
 using Storyteller.Data;
+using Storyteller.Host.Extensions;
 using Storyteller.Host.Filters;
-using System.Text;
 
 namespace Storyteller.Host
 {
@@ -26,27 +23,12 @@ namespace Storyteller.Host
                 opt.UseSqlServer(Configuration.GetSection("DatabaseContext:ConnectionString").Value);
             });
 
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(opt =>
-            {
-                opt.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = "",
-                    ValidAudience = "",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(""))
-                };
-            });
+            services.AddCustomAuthentication(Configuration);
 
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
-            
+
+            services.AddCustomSwagger(Configuration);
+
             services.AddControllers(opt =>
             {
                 opt.Filters.Add(typeof(HandlerResultFilter));
